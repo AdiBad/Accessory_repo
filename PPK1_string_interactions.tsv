@@ -1,0 +1,9 @@
+#node1	node2	node1_string_id	node2_string_id	neighborhood_on_chromosome	gene_fusion	phylogenetic_cooccurrence	homology	coexpression	experimentally_determined_interaction	database_annotated	automated_textmining	combined_score
+DR97_3098	ppk1	287.DR97_3098	287.DR97_2611	0.093	0	0.236	0	0	0	0.800	0.874	0.980
+DR97_3098	ppa	287.DR97_3098	287.DR97_3836	0.075	0	0	0	0	0	0.900	0.504	0.950
+DR97_5504	ppk1	287.DR97_5504	287.DR97_2611	0.093	0	0.273	0	0	0	0	0.874	0.910
+DR97_6005	ppk1	287.DR97_6005	287.DR97_2611	0.093	0	0.219	0	0	0	0.800	0.874	0.979
+DR97_6005	ppa	287.DR97_6005	287.DR97_3836	0.075	0	0	0	0	0	0.900	0.504	0.950
+pap	ppk1	287.DR97_4466	287.DR97_2611	0.093	0	0.448	0	0	0	0	0.873	0.931
+ppa	ppk1	287.DR97_3836	287.DR97_2611	0.056	0	0	0	0	0	0.900	0.604	0.959
+ppk1	ppx	287.DR97_2611	287.DR97_2612	0.347	0	0.451	0	0.130	0	0	0.927	0.974
