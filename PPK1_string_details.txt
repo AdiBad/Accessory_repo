@@ -1,1 +1,26 @@
 httpswww.ncbi.nlm.nih.govStructurecddcddsrv.cgiuid=197262
+
+
+Get data from github:
+
+LOAD CSV  FROM 'https://raw.githubusercontent.com/AdiBad/Accessory_repo/master/PPK1_string_interactions.tsv'  AS row
+FIELDTERMINATOR '\t' return row
+
+Fetch just first column:
+LOAD CSV with headers FROM 'https://raw.githubusercontent.com/StefaanVerwimp/IBP-ACES/master/STRINGdata/string_interactions.tsv'  AS row
+FIELDTERMINATOR '\t' 
+WITH toString(row.node1) AS node_1
+return node_1
+
+Create a graph of it:
+LOAD CSV with headers FROM 'https://raw.githubusercontent.com/AdiBad/Accessory_repo/master/PPK1_string_interactions.tsv'  AS row
+FIELDTERMINATOR '\t' 
+WITH toString(row.node1_string_id) AS string_1,toString(row.node2_string_id) AS string_2,toFloat(row.combined_score) as score
+
+MATCH (n:Node1z {string_1: string_1})
+MATCH (m:Node2z {string_2: string_2})
+MERGE (n)-[rel:CONTAINS {score: score}]->(m)
+RETURN count(rel)
+
+MATCH (n:Node1z)-[rel:CONTAINS]->(m:Node2z)
+RETURN m, rel, n
